@@ -24,15 +24,15 @@ led.setBrightness(255)
 basic.showIcon(IconNames.Happy)
 basic.forever(function () {
     if (input.logoIsPressed()) {
+        music.ringTone(50)
         while (input.logoIsPressed()) {
-            music.ringTone(50)
             basic.showLeds(`
                 # # # # #
                 # # # # #
                 # # # # #
                 # # # # #
                 # # # # #
-                `)
+                `, 0)
         }
         music.stopAllSounds()
         basic.clearScreen()
