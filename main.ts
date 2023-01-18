@@ -4,7 +4,12 @@ input.onButtonPressed(Button.A, function () {
 })
 input.onButtonPressed(Button.AB, function () {
     basic.clearScreen()
-    for (let index = 0; index < 50; index++) {
+    if (question == 0) {
+        question = 1
+    } else {
+        question = 0
+    }
+    while (question == 1) {
         basic.showLeds(`
             . # # # .
             # . . . #
@@ -20,6 +25,8 @@ input.onButtonPressed(Button.B, function () {
     music.playSoundEffect(music.createSoundEffect(WaveShape.Sine, 1, 1960, 255, 0, 500, SoundExpressionEffect.Tremolo, InterpolationCurve.Curve), SoundExpressionPlayMode.InBackground)
     basic.showIcon(IconNames.SmallHeart)
 })
+let question = 0
+question = 0
 music.setVolume(255)
 led.setBrightness(255)
 basic.showIcon(IconNames.Happy)
