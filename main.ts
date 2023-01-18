@@ -20,12 +20,12 @@ input.onButtonPressed(Button.B, function () {
     music.playSoundEffect(music.createSoundEffect(WaveShape.Sine, 1, 1960, 255, 0, 500, SoundExpressionEffect.Tremolo, InterpolationCurve.Curve), SoundExpressionPlayMode.InBackground)
     basic.showIcon(IconNames.SmallHeart)
 })
+music.setVolume(255)
 led.setBrightness(255)
 basic.showIcon(IconNames.Happy)
 basic.forever(function () {
     if (input.logoIsPressed()) {
         while (input.logoIsPressed()) {
-            music.ringTone(50)
             basic.showLeds(`
                 # # # # #
                 # # # # #
@@ -34,7 +34,6 @@ basic.forever(function () {
                 # # # # #
                 `, 0)
         }
-        music.stopAllSounds()
         basic.clearScreen()
     }
 })
